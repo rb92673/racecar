@@ -82,38 +82,38 @@ void sendCANData (int rpm, int fuel, int uptime, int clt, int afr, int map1, int
     mcp.write(fuel); //sends fuel level in gallons x 10 so we dont have to worry about a float.  Divides by 10 at racecapture so we have xx.x gallon reading
     mcp.endPacket();
 
-    mcp.beginPacket(1520);  //CAN Identifier 8 bytes follow
-    mcp.write((uint8_t)(uptime >> 8));  //ECU Time byte 1
-    mcp.write((uint8_t)(uptime & 0xFF));  //ECU Time byte 2
-    mcp.write(0x0);  //Not used
-    mcp.write(0x0);  //Not used
-    mcp.write(0x0);  //Not used
-    mcp.write(0x0);  //Not used
-    mcp.write((uint8_t)(rpm >> 8));  //RPM byte 1 Range 1000 to 6500
-    mcp.write((uint8_t)(rpm & 0xFF));  //RPM byte 2 Range 1000 to 6500
-    mcp.endPacket();
+    // mcp.beginPacket(1520);  //CAN Identifier 8 bytes follow
+    // mcp.write((uint8_t)(uptime >> 8));  //ECU Time byte 1
+    // mcp.write((uint8_t)(uptime & 0xFF));  //ECU Time byte 2
+    // mcp.write(0x0);  //Not used
+    // mcp.write(0x0);  //Not used
+    // mcp.write(0x0);  //Not used
+    // mcp.write(0x0);  //Not used
+    // mcp.write((uint8_t)(rpm >> 8));  //RPM byte 1 Range 1000 to 6500
+    // mcp.write((uint8_t)(rpm & 0xFF));  //RPM byte 2 Range 1000 to 6500
+    // mcp.endPacket();
 
-    mcp.beginPacket(1522);  //CAN Identifier 8 bytes follow
-    mcp.write(0x0);  //Not used
-    mcp.write(0x0);  //Not used
-    mcp.write((uint8_t)(map1 >> 8));  //MAP byte 1
-    mcp.write((uint8_t)(map1 & 0xFF));  //Map byte 2 Range 30 to 250 multiplied by 10
-    mcp.write((uint8_t)(mat >> 8));  //Manifold Air Temp Byte 1
-    mcp.write((uint8_t)(mat & 0xFF));  //Manifold Air Temp Byte 2 Range 60 to 120 multiplied by 10
-    mcp.write((uint8_t)(clt >> 8));  //Coolant Temp Byte 1
-    mcp.write((uint8_t)(clt & 0xFF));  //Coolant Temp Byte 2 Range 150 to 250 multiplied by 10
-    mcp.endPacket();
+    // mcp.beginPacket(1522);  //CAN Identifier 8 bytes follow
+    // mcp.write(0x0);  //Not used
+    // mcp.write(0x0);  //Not used
+    // mcp.write((uint8_t)(map1 >> 8));  //MAP byte 1
+    // mcp.write((uint8_t)(map1 & 0xFF));  //Map byte 2 Range 30 to 250 multiplied by 10
+    // mcp.write((uint8_t)(mat >> 8));  //Manifold Air Temp Byte 1
+    // mcp.write((uint8_t)(mat & 0xFF));  //Manifold Air Temp Byte 2 Range 60 to 120 multiplied by 10
+    // mcp.write((uint8_t)(clt >> 8));  //Coolant Temp Byte 1
+    // mcp.write((uint8_t)(clt & 0xFF));  //Coolant Temp Byte 2 Range 150 to 250 multiplied by 10
+    // mcp.endPacket();
 
-    mcp.beginPacket(1523);  //CAN Identifier 8 bytes follow
-    mcp.write((uint8_t)(tps >> 8));  //TPS Byte 1
-    mcp.write((uint8_t)(tps & 0xFF));  //TPS Byte 2 Range 0 to 100 multiplied by 10
-    mcp.write((uint8_t)(batt >> 8));  //batt Byte 1
-    mcp.write((uint8_t)(batt & 0xFF));  //batt Byte 2 Range 10 to 14 multiplied by 10
-    mcp.write((uint8_t)(afr >> 8));  //AFR Byte 1
-    mcp.write((uint8_t)(afr & 0xFF));  //AFR Byte 2 Range 9.0 to 16.0 multiplied by 10
-    mcp.write(0x0);  //Not used
-    mcp.write(0x0);  //Not used
-    mcp.endPacket();
+    // mcp.beginPacket(1523);  //CAN Identifier 8 bytes follow
+    // mcp.write((uint8_t)(tps >> 8));  //TPS Byte 1
+    // mcp.write((uint8_t)(tps & 0xFF));  //TPS Byte 2 Range 0 to 100 multiplied by 10
+    // mcp.write((uint8_t)(batt >> 8));  //batt Byte 1
+    // mcp.write((uint8_t)(batt & 0xFF));  //batt Byte 2 Range 10 to 14 multiplied by 10
+    // mcp.write((uint8_t)(afr >> 8));  //AFR Byte 1
+    // mcp.write((uint8_t)(afr & 0xFF));  //AFR Byte 2 Range 9.0 to 16.0 multiplied by 10
+    // mcp.write(0x0);  //Not used
+    // mcp.write(0x0);  //Not used
+    // mcp.endPacket();
   
     mcp.beginPacket(1535);  //CAN Identifier 8 bytes follow
     mcp.write((uint8_t)(fuelP >> 8));  //Fuel Pressure Byte 1
