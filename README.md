@@ -10,3 +10,9 @@ FeatherRFMRP2040receive_1.ino
 
 ESPLORAreceive_1.ino
   This sketch recieves the fuel level via LORA and displays on a small OLED screen. It is for a LILYGO TTGO LoRa32 V2.1_1.6
+
+FeatherCAN_Microsq_Emulator.ino
+  This sketch emulates a Microsquirt can bus messages.
+
+MCP2515_CAN_Receiver_3.ino and MCP2515_CAN_Receiver_4.ino
+  Read microsquirt can bus and do stuff with OLED screen and Neopixels.  Gas gauge, neopixel shift lights.
