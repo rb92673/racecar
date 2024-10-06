@@ -16,3 +16,6 @@ FeatherCAN_Microsq_Emulatorx.ino
 
 MCP2515_CAN_Receiver_x.ino 
   Read microsquirt can bus and do stuff with OLED screen and Neopixels.  Gas gauge, neopixel shift lights.
+
+LoraButtonBox folder
+  This is a 4 button box that communicates via LoRa.  When a button is pressed, it will light up on the box and then send status to light up the same button on another box.  The Master also sends car can bus information
